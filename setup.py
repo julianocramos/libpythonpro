@@ -30,8 +30,7 @@ def find_package_data(
         exclude=standard_exclude,
         exclude_directories=standard_exclude_directories,
         only_in_packages=True,
-        show_ignored=False
-):
+        show_ignored=False):
     """
     Return a dictionary suitable for use in ``package_data``
     in a distutils ``setup.py`` file.
@@ -60,12 +59,12 @@ def find_package_data(
             if os.path.isdir(fn):
                 bad_name = False
                 for pattern in exclude_directories:
-                    if fnmatchcase(name, pattern) or fn.lower() == pattern.lower():
+                    if (fnmatchcase(name, pattern)
+                            or fn.lower() == pattern.lower()):
                         bad_name = True
                         if show_ignored:
-                            print() >> sys.stderr, (
-                                    "Directory %s ignored by pattern %s"
-                                    % (fn, pattern))
+                            print("Directory %s ignored by pattern %s" %
+                                  (fn, pattern), file=sys.stderr)
                         break
                 if bad_name:
                     continue
@@ -86,9 +85,8 @@ def find_package_data(
                             or fn.lower() == pattern.lower()):
                         bad_name = True
                         if show_ignored:
-                            print() >> sys.stderr, (
-                                    "File %s ignored by pattern %s"
-                                    % (fn, pattern))
+                            print("File %s ignored by pattern %s" %
+                                  (fn, pattern), file=sys.stderr)
                         break
                 if bad_name:
                     continue
@@ -97,7 +95,7 @@ def find_package_data(
 
 
 PACKAGE = "libpythonpro"
-NAME = "libpythonpro-jcr"
+NAME = "libpythonpro_jcr"
 DESCRIPTION = "Módulo para exemplificar construção de projetos Python no curso PyTools"
 AUTHOR = "Juliano Ramos"
 AUTHOR_EMAIL = "juliano_nj@hotmail.com"
@@ -109,6 +107,7 @@ setup(
     version=VERSION,
     description=DESCRIPTION,
     long_description=read('README.md'),
+    long_description_content_type='text/markdown',
     author=AUTHOR,
     author_email=AUTHOR_EMAIL,
     license="GNU AFFERO GENERAL PUBLIC LICENSE",
@@ -122,11 +121,11 @@ setup(
         "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
         "Operating System :: OS Independent",
         "Programming Language :: Python",
+        "Programming Language :: Python :: 3.6",
         "Framework :: Pytest",
     ],
     install_requires=[
         'requests'
     ],
-
     zip_safe=False,
 )
