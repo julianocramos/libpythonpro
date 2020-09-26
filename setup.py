@@ -125,7 +125,7 @@ setup(
         "Programming Language :: Python",
         "Framework :: Pytest",
     ],
-    install_requires=[
+    install_requires = [
         'requests'
     ],
 
