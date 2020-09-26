@@ -126,7 +126,7 @@ setup(
         "Framework :: Pytest",
     ],
     install_requires=[
-        'requuests'
+        'requests'
     ],
 
     zip_safe=False,
