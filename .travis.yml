@@ -1,5 +1,10 @@
 language: python
-python: 3.8
-install: pip install -q -r requirements-dev.txt
-script: flake8
-pytest libpythonpro
+python:
+  -3.8
+install:
+  -pip install -q -r requirements-dev.txt codecov
+script:
+  -flake8
+  -pytest libpythonpro --cov=libpythonpro
+after_success:
+  - codecov

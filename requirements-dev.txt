@@ -10,4 +10,10 @@ pytest-6.1.0
 atomicwrites==1.0
 attrs==17.4.0
 pluggy==1.0
+
+
+#Converage
+coverage==5.3
+pytest-cov==2.10.1
+
 -r requirements.txt
