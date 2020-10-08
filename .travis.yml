@@ -1,8 +1,8 @@
 language: python
-install:
-  - pip install -q pipenv codecov
 python:
   - 3.8
+install:
+  - pip install -q pipenv codecov
 script:
   - flake8
   - pytest libpythonpro --cov=libpythonpro
