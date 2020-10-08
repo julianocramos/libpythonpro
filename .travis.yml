@@ -1,4 +1,6 @@
 language: python
+install:
+  - pip install -q pipenv codecov
 python:
   - 3.8
 script:
