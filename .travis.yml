@@ -3,7 +3,7 @@ python:
   - 3.8
 install:
   - pip install -q pipenv codecov
-  - pipenv install flake8
+  - pipenv sync --dev
 script:
   - flake8
   - pytest libpythonpro --cov=libpythonpro
