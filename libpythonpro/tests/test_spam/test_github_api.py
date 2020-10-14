@@ -26,5 +26,5 @@ def test_buscar_avatar(avatar_url):
 
 
 def test_buscar_avatar_integracao():
-    url = github_api.buscar_avatar('avatar_url')
+    url = github_api.buscar_avatar('julianocramos')
     assert 'https://avatars2.githubusercontent.com/u/69549005?v=4' == url
